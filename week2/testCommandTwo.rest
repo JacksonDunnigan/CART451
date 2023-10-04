@@ -1,0 +1,4 @@
+POST http://localhost:4200/aPostEndPoint HTTP/1.1
+content-type: application/x-www-form-urlencoded
+ 
+foo=test var a&bar=test var b
