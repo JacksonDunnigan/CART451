@@ -1,7 +1,11 @@
+
+let startHue = 0;
+let endHue = 0;
+const textarea = document.getElementById('queryResult');
+
 document.getElementById("searchForm").addEventListener("submit", function(event){
   event.preventDefault();
 
-  // document.addEventListener('DOMContentLoaded', () => {
     const submitButton = document.getElementById('submitButton');
     const yearInput = document.getElementById('year');
     const genreInput = document.getElementById('genre');
@@ -18,17 +22,23 @@ document.getElementById("searchForm").addEventListener("submit", function(event)
       fetch(`/query${queryParams}`)
         .then(response => response.json())
         .then(data => {
-          console.log('Query result:', data);
+          console.log(data[0]);
 
-          
-          // Do something with the query result
-        
-          // Update the query result container with the selected values
-          queryResultContainer.innerHTML = JSON.stringify(data, null, 2);
+          let text = '';
+          // Parses the data
+          for (var i = 0; i < data.length; i++){
+            text += data[i].Name +' by '+data[i].Author+'\n'+'\n';
+            startHue += data[i].Price;
+            endHue += data[i].year%100;
+          }
+          queryResultContainer.value = text;
+
+          // Set the CSS variable values
+          textarea.style.setProperty('--start-hue', startHue);
+          textarea.style.setProperty('--end-hue', endHue);
 
         })
         .catch(error => console.error('Error:', error));
     });
-  // });
 });
 

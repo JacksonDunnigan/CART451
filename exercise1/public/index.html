@@ -16,7 +16,7 @@
     <main>
       <section>
           <h2>Search</h2>
-          <p>Make a queries on the <a href="https://www.kaggle.com/datasets/sootersaalu/amazon-top-50-bestselling-books-2009-2019/data" target="_blank">Amazon Bestsellers</a> Dataset</p>
+          <p>Make a query on the <a href="https://www.kaggle.com/datasets/sootersaalu/amazon-top-50-bestselling-books-2009-2019/data" target="_blank">Amazon Bestsellers</a> Dataset</p>
           <form id="searchForm">
               <select name="year" id="year">
                   <option value="">Select Year</option>
@@ -37,30 +37,16 @@
                   <option value="Fiction">Fiction</option>
                   <option value="Non Fiction">Nonfiction</option>
               </select>
-              <!-- <input type="number" name="rating" id="rating" step="0.1" min="0" max="5" placeholder="Rating (0.0-5.0)"> -->
-              <!-- <label for="price">Price (1-100):</label> -->
               <input type="number" id="price" min="1" max="150" placeholder="Price 0$-150$">
               <button id="submitButton" type="submit">Search</button>
             </form>
-                <!-- Visualizes the results -->
 
-            <!-- <section id="resultContainer"> -->
+            <!-- Visualizes the results -->
             <h2>Query Result:</h2>
-            <textarea id="queryResult" rows="10" cols="50" readonly></textarea>
+            <textarea class="warp-text" id="queryResult" rows="10" cols="50" readonly></textarea>
         </section>
-        <!-- </section> -->
-
-        <!-- <section id="resultContainer">
-           
-        </section> -->
   </main>
     
-    <!-- p5.js canvas -->
-   
-    <!-- 
-    <footer>
-        <p>&copy; 2023 Your Website Name</p>
-    </footer> -->
 </body>
 <script src="client.js"></script>
 </html>

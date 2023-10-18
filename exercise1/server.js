@@ -47,39 +47,11 @@ app.get('/query', async (req, res) => {
             Genre,
             Price
         };          
-        // console.log(query);
 
         // Execute the query against the MongoDB collection
         const queryResult = await dbCollection.find(query).toArray();//(err, result) => {
         console.log(queryResult);
         res.send(queryResult);
-
-        //     if (err) {
-        //       console.error('Error executing MongoDB query:', err);
-        //       res.status(500).json({error: 'Internal server error' });
-        //     } else {
-        //       console.log(result);
-        //       res.status(200).json(result);
-        //     }
-        //   });
-        // console.log(queryResult);
-        // res.json(queryResult);
-        
-
-        // (err, result) => {
-        //     if (err) {
-        //         console.error('Error executing MongoDB query:', err);
-        //         res.json({error: 'Internal server error'});
-        //     } else {
-        //         console.log(queryResult);
-        //         res.json(result);
-        //     }
-        // });
-
-        // const query2 = await collection.find({Genre: "Non Fiction"}).limit(10).toArray();
-        // console.log("Top selling non fiction books:");
-        // console.log(query2);
-
 
     } catch(err) {
         console.error('Error while handling search:', err);
