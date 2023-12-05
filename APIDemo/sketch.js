@@ -41,7 +41,7 @@ function draw() {
     
         // console.log(squirrelInfo.highlight_fur_color);
         if (squirrelInfo.includes("Fur Colour: undefined")){
-            const tempColour = 'Brown';//colourList[floor(random(colourList.length))];
+            const tempColour = 'Brown';
             squirrelInfo = squirrelInfo.replace(/Fur Colour: undefined/, `Fur Colour: ${tempColour}`);
         }
 
